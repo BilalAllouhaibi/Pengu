@@ -1,5 +1,5 @@
 <template>
-<div>
+<div >
   <button @click="$router.push('/')"><img id="penguin" src="./assets/penguin.png"/></button>
   <router-view></router-view>
 </div>
@@ -21,8 +21,10 @@ export default {
 </script>
 
 <style>
+
 #penguin{
 width: 4em;
 position: absolute;
+margin-left: 1%;
 }
 </style>
