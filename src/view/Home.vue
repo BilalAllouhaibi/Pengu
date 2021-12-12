@@ -3,19 +3,19 @@
     <div class="homeButtons">
       <div class="box" id="songs">
         <button @click="$router.push('/Songs')">
-          <img src="../assets/Song.png" />
+          <img src="../assets/song.png" />
         </button>
         <a>Musik</a>
       </div>
       <div class="box" id="playlists">
         <button  @click="$router.push('/Playlists')">
-          <img src="../assets/Playlist.png" />
+          <img src="../assets/playlist.png" />
         </button>
         <a>Spellistor</a>
       </div>
       <div class="box" id="artists">
         <button  @click="$router.push('/Artists')">
-          <img src="../assets/Artist.png" />
+          <img src="../assets/artist.png" />
         </button>
         <a>Artister</a>
       </div>
@@ -41,7 +41,8 @@ padding: 4%;
   width: 50vh;
   border: solid;
   border-radius: 100px;
-  box-shadow: 5px 3px 17px 5px rgba(0, 255, 242, 0.77);
+  box-shadow: 5px 3px 17px 5px rgba(255, 206, 116, 0.822);
+  background: rgba(255, 253, 145, 0.753);
 }
 .homeButtons button :hover{
  transform: scale(1.02);
@@ -50,6 +51,7 @@ padding: 4%;
 .box{
 display: flex;
 flex-direction: column;
+
 }
 .homeButtons a{
 font-weight: bold;

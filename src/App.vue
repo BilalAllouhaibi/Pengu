@@ -27,4 +27,8 @@ width: 4em;
 position: absolute;
 margin-left: 1%;
 }
+div button :hover{
+  transform: scale(1.1);
+  cursor: pointer;
+}
 </style>
