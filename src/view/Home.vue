@@ -27,7 +27,7 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 
 .homeButtons {
   display: flex;
