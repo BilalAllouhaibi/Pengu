@@ -1,8 +1,8 @@
 <template>
   <Box>
     <template v-slot:searchResult>
-      <form @submit.prevent="searchMusic">
-      <input placeholder="sök på musik" v-model="searchResult" type="search">
+      <form @submit.prevent="searchSong">
+      <input placeholder="sök på musik" v-model="searchTerm" type="search">
       </form>
     </template>
   </Box>
@@ -16,12 +16,19 @@ components:{
 },
 data(){
   return{
-    searchResult: "",
+    searchTerm: "",
+    Songs:[],
+    Song:{},
   }
 },
 methods:{
-  searchMusic(){
-    console.log(this.searchResult)
+  async searchSong(){
+    console.log(this.searchTerm)
+    await this.$store.dispatch("searchSong", this.searchTerm)
+    this.Songs = this.$store.state.Songs
+    console.log("-----------view--------")
+    console.log(this.Songs)
+
   }
 }
 }
