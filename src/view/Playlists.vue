@@ -1,6 +1,6 @@
 <template>
   <Box>
-    <template v-slot:searchResult> 
+    <template v-slot:searchBar> 
       <h1> playlists</h1>
     </template>
   </Box>

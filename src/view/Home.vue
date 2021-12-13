@@ -27,22 +27,23 @@
 export default {};
 </script>
 
-<style>
+<style scoped>
 
 .homeButtons {
   display: flex;
   margin: 5em;
   justify-content: space-around;
-box-shadow: inset 0px 1px 27px 7px rgba(0,0,0,0.54);
+box-shadow: inset 0px 1px 27px 7px rgb(0, 0, 0);
 padding: 4%;
  border-radius: 100px;
+ background-image: url("../assets/grill.jpg");
 } 
 .homeButtons button img {
   width: 50vh;
   border: solid;
   border-radius: 100px;
-  box-shadow: 5px 3px 17px 5px rgba(255, 206, 116, 0.822);
-  background: rgba(255, 253, 145, 0.753);
+  box-shadow: 5px 3px 17px 5px rgba(255, 153, 0, 0.623);
+  background: rgb(255, 225, 91);
 }
 .homeButtons button :hover{
  transform: scale(1.02);
@@ -57,6 +58,7 @@ flex-direction: column;
 font-weight: bold;
 text-align: center;
 text-transform:uppercase ;
+color: #ceeefd;
 }
 @media only screen and (max-width: 600px){
   .homeButtons{

@@ -3,7 +3,7 @@ import axios from "axios";
 
 const store = createStore({
     state:{
-        Song:{
+        song:{
             type: "",
             videoId: "",
             name: "",
@@ -26,12 +26,12 @@ const store = createStore({
             params: "",
         },
 
-        Songs:[],
+        songs:[],
         },
 
     mutations:{
         setSongs(state,data){
-            state.Songs = data
+            state.songs = data
         }
     },
     actions:{
