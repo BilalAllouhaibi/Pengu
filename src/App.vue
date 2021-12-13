@@ -1,5 +1,5 @@
 <template>
-<div >
+<div class="base">
   <button @click="$router.push('/')"><img id="penguin" src="./assets/penguin.png"/></button>
   <router-view></router-view>
 </div>
@@ -27,7 +27,7 @@ width: 4em;
 position: absolute;
 margin-left: 1%;
 }
-div button :hover{
+.base button :hover{
   transform: scale(1.1);
   cursor: pointer;
 }

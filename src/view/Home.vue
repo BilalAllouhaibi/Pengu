@@ -1,19 +1,19 @@
 <template>
   <div class="home">
     <div class="homeButtons">
-      <div class="box" id="songs">
+      <div class="buttonBox" id="songs">
         <button @click="$router.push('/Songs')">
           <img src="../assets/song.png" />
         </button>
         <a>Musik</a>
       </div>
-      <div class="box" id="playlists">
+      <div class="buttonBox" id="playlists">
         <button  @click="$router.push('/Playlists')">
           <img src="../assets/playlist.png" />
         </button>
         <a>Spellistor</a>
       </div>
-      <div class="box" id="artists">
+      <div class="buttonBox" id="artists">
         <button  @click="$router.push('/Artists')">
           <img src="../assets/artist.png" />
         </button>
@@ -48,7 +48,7 @@ padding: 4%;
  transform: scale(1.02);
  cursor: pointer;
 }
-.box{
+.buttonBox{
 display: flex;
 flex-direction: column;
 
@@ -57,6 +57,14 @@ flex-direction: column;
 font-weight: bold;
 text-align: center;
 text-transform:uppercase ;
+}
+@media only screen and (max-width: 600px){
+  .homeButtons{
+    flex-direction: column;
+  }
+  .homeButtons button img {
+    width: 50vw;
+  }
 }
 
 </style>

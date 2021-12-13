@@ -11,5 +11,10 @@ export default {
 </script>
 
 <style>
-
+.box form input {
+    border-style: none;
+    border-bottom-style: solid;
+    margin-left: 40%;
+    width: 35vw;
+}
 </style>
