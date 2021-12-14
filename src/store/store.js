@@ -42,9 +42,19 @@ const store = createStore({
             console.log(data)
             context.commit("setSongs", data.data)
         },
-        test(){
-            console.log("test")
-        }
+        playSong(context, videoId){
+            console.log(videoId)
+            window.player.loadVideoById(videoId)
+        },
+        playPausedSong(){
+            console.log("play")
+            window.player.playVideo()
+        },
+        pauseSong(){
+            console.log("pause")
+            window.player.pauseVideo()
+        },
+    
     },
     getters:{
 

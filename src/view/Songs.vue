@@ -16,7 +16,7 @@
               v-for="song in this.$store.state.songs.content"
               v-bind:key="song.id"
             >
-              <img @click="showMusicPlayer(song)" v-bind:src="song.thumbnails[1].url" />
+              <img @click="showMusicPlayer(song);" v-bind:src="song.thumbnails[1].url" />
               <i>{{ song.name }}</i>
               <i>Artist: {{ song.artist.name }}</i>
             </div>
@@ -28,10 +28,14 @@
   <div id="musicPlayer" v-show="musicPlayer">
   <MusicPlayer ref="musicPlayer" @close="musicPlayer = false">
     <template v-slot:info>
-      <h1>{{chosenSong.name}} {{chosenSong.artist.name}}</h1>
+        <a>{{chosenSong.name}}</a> 
+        <a>{{chosenSong.artist.name}}</a>
+      <img v-bind:src="chosenSong.thumbnails[1].url"/>
     </template>
     <template v-slot:buttons>
-      <h1>hej</h1>
+      <button @click="pauseSong"><i class="fas fa-pause-circle"></i></button>
+      <button @click="playPausedSong"><i class="fas fa-play-circle"></i></button>
+      <button><i class="fas fa-share-alt"></i></button>
     </template>
   </MusicPlayer>
   </div>
@@ -56,7 +60,13 @@ export default {
       chosenSong:{
         artist: {
           name: "",
-        }
+        },
+        thumbnails:[
+               {url: "",},
+               {url: "",}
+        ],
+        videoId:"",
+        
       },
     };
   },
@@ -66,13 +76,25 @@ export default {
       console.log(this.searchTerm);
       await this.$store.dispatch("searchSong", this.searchTerm);
     },
-    showMusicPlayer(song){
+    async showMusicPlayer(song){
       console.log("-----------whowMusicPlayer-------------")
       console.log(song)
       this.chosenSong = song;
       this.musicPlayer = true
       console.log("chosensong " + this.chosenSong.artist.name)
+     this.playSong(this.chosenSong.videoId)
     },
+   playSong(videoId){
+     console.log("-----------playSongView-----------------")
+     console.log(videoId)
+     this.$store.dispatch("playSong", videoId)
+   },
+   pauseSong(){
+     this.$store.dispatch("pauseSong")
+   },
+   playPausedSong(){
+     this.$store.dispatch("playPausedSong")
+   },
   },
 };
 </script>
