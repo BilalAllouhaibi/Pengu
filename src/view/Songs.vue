@@ -7,6 +7,7 @@
           v-model="searchTerm"
           type="search"
         />
+        <button class="searchButton" type="submit"><i class="fas fa-search"></i></button>
       </form>
         <Items>
           <template v-slot:info>
@@ -14,11 +15,9 @@
               v-for="song in this.$store.state.songs.content"
               v-bind:key="song.id"
             >
-              <img v-bind:src="song.thumbnails[0].url" />
+              <img v-bind:src="song.thumbnails[1].url" />
               <i>{{ song.name }}</i>
-              <hr>
               <i>Artist: {{ song.artist.name }}</i>
-              <i>Album: {{ song.album.name }}</i>
             </div>
           </template>
         </Items>

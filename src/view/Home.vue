@@ -38,14 +38,14 @@ padding: 4%;
  border-radius: 100px;
  background-image: url("../assets/grill.jpg");
 } 
-.homeButtons button img {
+.buttonBox button img {
   width: 50vh;
   border: solid;
   border-radius: 100px;
   box-shadow: 5px 3px 17px 5px rgba(255, 153, 0, 0.623);
   background: rgb(255, 225, 91);
 }
-.homeButtons button :hover{
+.buttonBox button :hover{
  transform: scale(1.02);
  cursor: pointer;
 }
@@ -60,7 +60,7 @@ text-align: center;
 text-transform:uppercase ;
 color: #ceeefd;
 }
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 1050px){
   .homeButtons{
     flex-direction: column;
   }
