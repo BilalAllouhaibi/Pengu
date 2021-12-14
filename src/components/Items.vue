@@ -21,26 +21,28 @@
   flex-direction: column;
   width: 10em;
   height: 13em;
-  background-color: rgb(54, 54, 54);
   margin: 1.4em ;
   padding: 1em;
-  border-radius: 3em;
   
 }
-.items div img{
+.items img{
   width:10rem;
+  margin-bottom: 1em;
   border-radius: 100%; 
   border-style:solid;
   border-width:1px;
   border-color:black;
-  -webkit-box-shadow: 0px 0px 50px -10px #000000; 
-box-shadow: 0px 0px 50px -10px #000000;
+  }
+.items div img:hover{
+cursor: pointer;
+}
+.items div img:active{
+transform: scale(0.97);
 }
 .items div i{
  font-size: 85%;
  text-align: center;
  color: white;
- overflow: hidden;
 }
 @media only screen and (max-width: 1000px){
   .items div img{

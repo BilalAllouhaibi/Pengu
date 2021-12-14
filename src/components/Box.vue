@@ -22,6 +22,8 @@
 }
 .box input:focus{
   outline: none;
+  border-bottom-color: rgb(146, 146, 146);
+  transition: 0.5s;
 }
 
 [type="search"]::-webkit-search-cancel-button {
