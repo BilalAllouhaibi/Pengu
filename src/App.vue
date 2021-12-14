@@ -1,4 +1,5 @@
 <template>
+
   <div>
     <button @mouseover="homeButtons = true" @mouseleave="homeButtons = false" @click="$router.push('/')">
       <img id="penguin" src="./assets/penguin.png" />
@@ -38,7 +39,9 @@ export default {
   position: absolute;
   margin-left: 1%;
 }
+
 div button :hover {
+
   transform: scale(1.1);
   cursor: pointer;
    transform: rotate(-45deg);

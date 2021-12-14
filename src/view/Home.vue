@@ -1,19 +1,19 @@
 <template>
   <div class="home">
     <div class="homeButtons">
-      <div class="box" id="songs">
+      <div class="buttonBox" id="songs">
         <button @click="$router.push('/Songs')">
           <img src="../assets/song.png" />
         </button>
         <a>Musik</a>
       </div>
-      <div class="box" id="playlists">
+      <div class="buttonBox" id="playlists">
         <button  @click="$router.push('/Playlists')">
           <img src="../assets/playlist.png" />
         </button>
         <a>Spellistor</a>
       </div>
-      <div class="box" id="artists">
+      <div class="buttonBox" id="artists">
         <button  @click="$router.push('/Artists')">
           <img src="../assets/artist.png" />
         </button>
@@ -33,22 +33,22 @@ export default {};
   display: flex;
   margin: 5em;
   justify-content: space-around;
-box-shadow: inset 0px 1px 27px 7px rgba(0,0,0,0.54);
+box-shadow: inset 0px 1px 27px 7px rgb(0, 0, 0);
 padding: 4%;
  border-radius: 100px;
 } 
-.homeButtons button img {
+.buttonBox button img {
   width: 50vh;
   border: solid;
   border-radius: 100px;
-  box-shadow: 5px 3px 17px 5px rgba(255, 206, 116, 0.822);
-  background: rgba(255, 253, 145, 0.753);
+  box-shadow: 5px 3px 17px 5px rgba(255, 153, 0, 0.623);
+  background: rgb(255, 225, 91);
 }
-.homeButtons button :hover{
+.buttonBox button :hover{
  transform: scale(1.02);
  cursor: pointer;
 }
-.box{
+.buttonBox{
 display: flex;
 flex-direction: column;
 
@@ -57,6 +57,15 @@ flex-direction: column;
 font-weight: bold;
 text-align: center;
 text-transform:uppercase ;
+color: #ceeefd;
+}
+@media only screen and (max-width: 1050px){
+  .homeButtons{
+    flex-direction: column;
+  }
+  .homeButtons button img {
+    width: 50vw;
+  }
 }
 
 </style>
