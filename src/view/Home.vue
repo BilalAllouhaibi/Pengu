@@ -36,6 +36,7 @@ export default {};
 box-shadow: inset 0px 1px 27px 7px rgb(0, 0, 0);
 padding: 4%;
  border-radius: 100px;
+ background-image: url("../assets/grill.jpg");
 } 
 .buttonBox button img {
   width: 50vh;
