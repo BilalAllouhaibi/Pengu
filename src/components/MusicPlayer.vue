@@ -1,11 +1,6 @@
 <template>
   <div class="musicPlayer">
-    
     <div class="content">
-      <button id="closemusicPlayer" @click="$emit('close')">
-        <i class="fas fa-times"></i>
-      </button>
-      <br>
       <div class="info">
         <slot name="info"></slot>
       </div>
@@ -39,7 +34,6 @@ export default {
   padding: 1em;
   height: 10em;
   width: 30em;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 #closemusicPlayer{
   float:right ;
@@ -65,7 +59,8 @@ export default {
 .info img{
   width: 5em;
   border: solid;
-  border-radius: 100%;
+  border-radius: 50%;
+  cursor: pointer
   
 }
 .info a:hover{
@@ -76,8 +71,31 @@ transition: 10s;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  
 }
 .buttons button i {
   font-size: 1.7rem;
+  cursor: pointer
 }
+.buttons input[type='range']{
+   -webkit-appearance: none;
+   height: 0.5em;
+   margin-top: 1em;
+      background-color: black;
+      border-radius: 1em;
+}
+.buttons input[type='range']::-webkit-slider-thumb {
+      width: 2.5em;
+      -webkit-appearance: none;
+      height: 2.5em;
+      border-radius: 50%;
+      background-image: url("../assets/penguin.png");
+      background-size: 2.5em 2.5em;
+      cursor:grabbing;
+    }
+    .buttons a{
+      font-size: 0.5em
+    }
+
+
 </style>

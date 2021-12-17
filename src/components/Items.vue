@@ -28,7 +28,7 @@
 .items img{
   width:10rem;
   margin-bottom: 1em;
-  border-radius: 100%; 
+  border-radius: 50%; 
   border-style:solid;
   border-width:1px;
   border-color:black;

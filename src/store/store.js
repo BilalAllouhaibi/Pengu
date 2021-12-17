@@ -36,24 +36,30 @@ const store = createStore({
     },
     actions:{
         async searchSong(context,searchTerm){
-            console.log("-----------store----------")
+            try{console.log("-----------store----------")
             console.log(searchTerm)
             let data = await axios.get(`https://yt-music-api.herokuapp.com/api/yt/songs/${searchTerm}`)
             console.log(data)
-            context.commit("setSongs", data.data)
+            context.commit("setSongs", data.data)}catch(error){
+                alert("error")
+            }
         },
-        playSong(context, videoId){
-            console.log(videoId)
-            window.player.loadVideoById(videoId)
+         async playSong(context, videoId){ 
+             console.log(videoId)
+            await window.player.loadVideoById(videoId)
         },
-        playPausedSong(){
+         playPausedSong(){
             console.log("play")
-            window.player.playVideo()
+          window.player.playVideo()
         },
-        pauseSong(){
+         pauseSong(){
             console.log("pause")
             window.player.pauseVideo()
         },
+        changeVolume(context ,volume){
+            console.log(volume)
+            window.player.setVolume(volume)
+        }
     
     },
     getters:{

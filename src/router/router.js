@@ -10,17 +10,35 @@ const routes = [
         component: Home,
       },
       {
-        path:"/Artists",
+        path:"/artists",
         name: "Artists",
         component: Artists
       },
       {
-        path:"/Songs",
+        path: "/Songs",
         name: "Songs",
-        component: Songs
+        component: Songs,
+        children:[
+          
+          {
+            path: ":results",
+            component: Songs
+          },
+        ]
       },
+    
+
+ { path:"/Song",
+   name:"Song",
+   component: Songs,  
+   children:[  {
+        path:':songId',
+        component: Songs
+      },]
+    },
+     
       {
-        path:"/Playlists",
+        path:"/playlists",
         name: "Playlists",
         component: Playlists
       },
