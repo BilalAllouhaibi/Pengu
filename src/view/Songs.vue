@@ -153,6 +153,7 @@ export default {
       this.getPlayerState()
     },
     playPausedSong() {
+      this.$store.dispatch("playPausedSong")
       this.getPlayerState()
     },
      playSong(videoId) {
