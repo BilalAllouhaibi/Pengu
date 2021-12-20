@@ -12,7 +12,13 @@ const routes = [
       {
         path:"/artists",
         name: "Artists",
-        component: Artists
+        component: Artists,
+        children:[
+          {
+            path: ":results",
+            component: Artists,
+          }
+        ]
       },
       {
         path: "/Songs",

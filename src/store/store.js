@@ -10,6 +10,13 @@ const store = createStore({
             artist:{
                 name:"",
                 browseId:"",
+                thumbnails: [
+                    {
+                        url: "",
+                        width: 0,
+                        height: 0,
+                    },
+                ]
             },
             album: {
                 name: "",
@@ -25,13 +32,16 @@ const store = createStore({
             ],
             params: "",
         },
-
+        artists:[],
         songs:[],
         },
 
     mutations:{
         setSongs(state,data){
             state.songs = data
+        },
+        setArtists(state,data){
+            state.artists = data
         }
     },
     actions:{
@@ -59,8 +69,14 @@ const store = createStore({
         changeVolume(context ,volume){
             console.log(volume)
             window.player.setVolume(volume)
+        },
+        async searchArtist(context, searchTerm){
+            let data = await axios.get(`https://yt-music-api.herokuapp.com/api/yt/artists/${searchTerm}`)
+            console.log(data)
+            context.commit("setArtists", data.data)
+
+            
         }
-    
     },
     getters:{
 
