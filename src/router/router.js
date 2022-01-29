@@ -3,6 +3,7 @@ import Home from "../view/Home"
 import Artists from "../view/Artists"
 import Songs from "../view/Songs"
 import Playlists from "../view/Playlists"
+import ArtistPopup from "../components/ArtistPopup"
 const routes = [
     {
         path: "/",
@@ -15,9 +16,11 @@ const routes = [
         component: Artists,
         children:[
           {
-            path: ":results",
-            component: Artists,
-          }
+              path: ":results",
+              name: "Artist",
+              component: ArtistPopup
+            },
+          
         ]
       },
       {

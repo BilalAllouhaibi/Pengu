@@ -8,15 +8,39 @@ const store = createStore({
             videoId: "",
             name: "",
             artist:{
-                name:"",
-                browseId:"",
+                name: "",
+                description: "",
+                views: 0,
+                products: {
+                    songs: {
+                        content: [],
+                        videoId: "",
+                        params: ""
+                    },
+                    albums: {
+                        content: [],
+                        browseId: "",
+                        params: ""
+                    },
+                    singles: {
+                        content: [],
+                        browseId: "",
+                        params: ""
+                    },
+                    videos: {
+                        content: [],
+                        videoId: "",
+                        params: ""
+                    }
+                },
                 thumbnails: [
                     {
                         url: "",
                         width: 0,
-                        height: 0,
-                    },
+                        height: 0
+                    }
                 ]
+                
             },
             album: {
                 name: "",
@@ -32,8 +56,10 @@ const store = createStore({
             ],
             params: "",
         },
-        artists:[],
-        songs:[],
+        
+ artists:[
+    ],
+    songs:[],
         },
 
     mutations:{
@@ -42,6 +68,9 @@ const store = createStore({
         },
         setArtists(state,data){
             state.artists = data
+        },
+        setArtist (state,data){
+            state.artist = data
         }
     },
     actions:{
@@ -76,6 +105,12 @@ const store = createStore({
             context.commit("setArtists", data.data)
 
             
+        },
+        async getArtistById(context, artistId){
+            console.log(artistId)
+            let data = await axios.get(`https://yt-music-api.herokuapp.com/api/yt/artist/${artistId}`)
+            console.log(data)
+            context.commit("setArtist", data.data)
         }
     },
     getters:{
