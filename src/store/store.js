@@ -61,6 +61,7 @@ const store = createStore({
  artists:[
     ],
     songs:[],
+    playlists:[]
         },
 
     mutations:{
@@ -75,6 +76,9 @@ const store = createStore({
         },
         setPlaylistIndex (state,data){
             state.playlistIndex = data
+        },
+        setPlaylists (state,data){
+            state.playlists = data
         }
     },
     actions:{
@@ -120,6 +124,12 @@ const store = createStore({
             let data = window.player.getPlaylistIndex()
             context.commit("setPlaylistIdex", data.data)
     },
+    async searchPlaylist(context,searchTerm){
+        let data = await axios.get(`https://yt-music-api.herokuapp.com/api/yt/playlists/${searchTerm}`)
+        context.commit("setPlaylists", data.data)
+        console.log(data)
+        console.log(this.state.playlists)
+    }
 },
     getters:{
 
