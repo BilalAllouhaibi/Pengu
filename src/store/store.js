@@ -3,6 +3,7 @@ import axios from "axios";
 
 const store = createStore({
     state:{
+        playlistIndex: 0,
         song:{
             type: "",
             videoId: "",
@@ -71,6 +72,9 @@ const store = createStore({
         },
         setArtist (state,data){
             state.artist = data
+        },
+        setPlaylistIndex (state,data){
+            state.playlistIndex = data
         }
     },
     actions:{
@@ -111,8 +115,12 @@ const store = createStore({
             let data = await axios.get(`https://yt-music-api.herokuapp.com/api/yt/artist/${artistId}`)
             console.log(data)
             context.commit("setArtist", data.data)
-        }
+        },
+        getPlaylistIndex(context){
+            let data = window.player.getPlaylistIndex()
+            context.commit("setPlaylistIdex", data.data)
     },
+},
     getters:{
 
     }
